@@ -9,7 +9,7 @@ const List = require("./models/zelda.model");
 
 app.use(express.json());
 app.use(cors({origin: ["http://localhost:3000", "https://the-master-list.onrender.com"]}));
-app.use(express.urlencoded({ extended: false }));
+// app.use(express.urlencoded({ extended: false }));
 
 require('./routes/zelda.routes')(app);
 
