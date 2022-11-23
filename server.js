@@ -8,8 +8,8 @@ const socket = require("socket.io");
 const List = require("./models/zelda.model");
 
 app.use(express.json());
-app.use(cors({origin: "https://the-master-list.onrender.com"}));
-app.use(express.urlencoded({ extended: true }));
+app.use(cors({origin: ["http://localhost:3000", "https://the-master-list.onrender.com"]}));
+app.use(express.urlencoded({ extended: false }));
 
 require('./routes/zelda.routes')(app);
 
