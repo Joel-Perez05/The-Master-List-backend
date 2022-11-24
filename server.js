@@ -13,7 +13,7 @@ app.use(cors({origin: ["http://localhost:3000", "https://the-master-list.onrende
 // app.use(express.urlencoded({ extended: false }));
 
 app.get('/*', function(req, res) {
-    res.sendFile(path.join(__dirname, 'public', 'index.html'), function(err) {
+    res.sendFile(path.join(__dirname, 'public', 'index.js'), function(err) {
         if (err) {
             res.status(500).send(err)
         }
