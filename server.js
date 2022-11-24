@@ -11,6 +11,14 @@ app.use(express.json());
 app.use(cors({origin: ["http://localhost:3000", "https://the-master-list.onrender.com"]}));
 // app.use(express.urlencoded({ extended: false }));
 
+app.get('/*', function(req, res) {
+    res.sendFile(path.join(__dirname, 'public', 'index.html'), function(err) {
+        if (err) {
+            res.status(500).send(err)
+        }
+    })
+})
+
 require('./routes/zelda.routes')(app);
 
 const server = app.listen(PORT, () => console.log(`Listening on port: ${PORT}`));
